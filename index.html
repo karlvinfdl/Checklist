@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Check-list Projet Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <script type="module" crossorigin src="/Checklist/assets/index-DKKBVlIA.js"></script>
+  <link rel="stylesheet" crossorigin href="/Checklist/assets/index-D5kKG5sI.css">
+</head>
+<body>
+  <div class="app">
+    <h1>Check-list Projet Web</h1>
+    <p class="subtitle">
+      Les cases cochées sont sauvegardées automatiquement dans ton navigateur.<br/>
+      Tu peux aussi générer un PDF avec uniquement les éléments complétés.
+    </p>
+
+    <div class="toolbar">
+      <button id="check-all" class="secondary">Tout cocher</button>
+      <button id="uncheck-all" class="secondary">Tout décocher</button>
+      <button id="export-pdf">Exporter les éléments cochés en PDF</button>
+    </div>
+
+    <div class="card" id="checklist">
+
+      <!-- 1. Cahier des charges -->
+      <div class="section">
+        <div class="section-title">
+          <span class="badge">1</span>
+          <span>Analyse du cahier des charges</span>
+        </div>
+        <div class="tasks">
+          <div class="task">
+            <input type="checkbox" id="cc-lecture" data-label="Lecture complète du cahier des charges">
+            <label for="cc-lecture">Lecture complète du cahier des charges</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="cc-fonctionnalites" data-label="Liste des fonctionnalités principales">
+            <label for="cc-fonctionnalites">Lister les fonctionnalités principales</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="cc-questions" data-label="Questions / clarifications envoyées au client">
+            <label for="cc-questions">Noter les questions / clarifications à voir avec le client</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Planification -->
+      <div class="section">
+        <div class="section-title">
+          <span class="badge">2</span>
+          <span>Planification et organisation</span>
+        </div>
+        <div class="tasks">
+          <div class="task">
+            <input type="checkbox" id="plan-decoupage" data-label="Découpage du projet en tâches">
+            <label for="plan-decoupage">Découper le projet en tâches (user stories, modules…)</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="plan-estimations" data-label="Estimation du temps par tâche">
+            <label for="plan-estimations">Estimer le temps par tâche</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="plan-tableau" data-label="Création du tableau de suivi (GitHub Projects, Trello...)">
+            <label for="plan-tableau">Créer le tableau de suivi (GitHub Projects, Trello, etc.)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Design / Figma -->
+      <div class="section">
+        <div class="section-title">
+          <span class="badge">3</span>
+          <span>Charte graphique & maquettes (Figma)</span>
+        </div>
+        <div class="section-subtitle">
+          Palette de couleurs, typographies, composants UI, maquettes desktop & mobile.
+        </div>
+        <div class="tasks">
+          <div class="task">
+            <input type="checkbox" id="design-charte" data-label="Création de la charte graphique">
+            <label for="design-charte">Définir la charte graphique</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="design-wireframes" data-label="Wireframes des pages principales">
+            <label for="design-wireframes">Créer les wireframes (structure des pages)</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="design-figma" data-label="Maquettes Figma haute fidélité">
+            <label for="design-figma">Faire les maquettes Figma (desktop & mobile)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. GitHub -->
+      <div class="section">
+        <div class="section-title">
+          <span class="badge">4</span>
+          <span>GitHub & branches</span>
+        </div>
+        <div class="tasks">
+          <div class="task">
+            <input type="checkbox" id="git-repo" data-label="Création du dépôt GitHub">
+            <label for="git-repo">Créer le dépôt GitHub</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="git-branches" data-label="Mise en place des branches main/dev/feature">
+            <label for="git-branches">Configurer les branches (<code>main</code>, <code>dev</code>, <code>feature/*</code>)</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="git-readme" data-label="Rédaction d'un README clair">
+            <label for="git-readme">Écrire un README (installation, commandes, techno…)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Setup projet (Vite, npm, dépendances) -->
+      <div class="section">
+        <div class="section-title">
+          <span class="badge">5</span>
+          <span>Initialisation du projet (VS Code, npm, Vite)</span>
+        </div>
+        <div class="tasks">
+          <div class="task">
+            <input type="checkbox" id="setup-vscode" data-label="Projet ouvert/configuré dans VS Code">
+            <label for="setup-vscode">Configurer le projet dans VS Code</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="setup-npm" data-label="Initialisation npm et Vite">
+            <label for="setup-npm">Initialiser le projet avec npm & Vite</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="setup-bootstrap" data-label="Installation des dépendances (Bootstrap, etc.)">
+            <label for="setup-bootstrap">Installer les dépendances (Bootstrap, etc.)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Dev -->
+      <div class="section">
+        <div class="section-title">
+          <span class="badge">6</span>
+          <span>Développement HTML / CSS / JS</span>
+        </div>
+        <div class="tasks">
+          <div class="task">
+            <input type="checkbox" id="dev-structure" data-label="Structure HTML de base réalisée">
+            <label for="dev-structure">Créer la structure HTML de base</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="dev-styles" data-label="Styles CSS principaux appliqués">
+            <label for="dev-styles">Appliquer les styles CSS principaux</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="dev-js" data-label="Fonctionnalités principales en JavaScript">
+            <label for="dev-js">Coder les fonctionnalités principales en JavaScript</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Tests & déploiement -->
+      <div class="section">
+        <div class="section-title">
+          <span class="badge">7</span>
+          <span>Tests & déploiement</span>
+        </div>
+        <div class="tasks">
+          <div class="task">
+            <input type="checkbox" id="test-fonctionnel" data-label="Tests fonctionnels (parcours utilisateur)">
+            <label for="test-fonctionnel">Tester les parcours utilisateur (fonctionnel)</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="test-responsive" data-label="Vérification responsive (mobile, tablette, desktop)">
+            <label for="test-responsive">Vérifier le responsive (mobile, tablette, desktop)</label>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="deploy" data-label="Déploiement en ligne (Netlify, Vercel, etc.)">
+            <label for="deploy">Déployer le projet (Netlify, Vercel, etc.)</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Éléments personnalisés -->
+      <div class="section">
+        <div class="section-title">
+          <span class="badge">8</span>
+          <span>Éléments personnalisés</span>
+        </div>
+        <div class="section-subtitle">
+          Ajoute tes propres tâches : elles seront sauvegardées et incluses dans le PDF.
+        </div>
+        <div class="tasks" id="custom-tasks"></div>
+        <div class="custom-input-row">
+          <input
+            type="text"
+            id="custom-task-input"
+            placeholder="Nouvelle tâche personnalisée..."
+          />
+          <button id="add-custom-task" class="secondary small">Ajouter</button>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="info">
+      ⚠️ Les données sont stockées en local (localStorage). Si tu effaces le cache / les données du navigateur, la check-list sera réinitialisée.
+    </p>
+
+    <!-- Zone invisible (utilisée pour construire le contenu à imprimer) -->
+    <div id="pdf-preview"></div>
+
+    
+  </div>
+
+
+
+</body>
+</html>
