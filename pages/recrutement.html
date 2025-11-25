@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sucré Salé – Recrutement</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/style/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          Sucré <span>Salé</span> – Évry
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="../index.html#carte">Carte</a></li>
+          <li><a href="../contact.html">Contact & Réservation</a></li>
+          <li><a href="../pages/recrutement.html" class="active">Recrutement</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Recrutement</h1>
+    <p>
+      Sucré Salé Évry recherche régulièrement de nouveaux talents pour renforcer
+      son équipe en salle et en cuisine.
+    </p>
+
+    <section class="cards" style="margin-top:1.5rem;">
+      <article class="card">
+        <div class="card-tag">Salle</div>
+        <h3>Serveur / Serveuse</h3>
+        <p>
+          Accueil des clients, prise de commande, service à table
+          dans une ambiance conviviale.
+        </p>
+        <p style="margin-top:0.5rem;font-size:0.9rem;">
+          Profil : souriant(e), dynamique, à l’aise avec le contact client.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-tag">Cuisine</div>
+        <h3>Cuisinier / Cuisinière</h3>
+        <p>
+          Préparation des plats, respect des recettes maison et des normes
+          d’hygiène.
+        </p>
+        <p style="margin-top:0.5rem;font-size:0.9rem;">
+          Profil : rigoureux(se), organisé(e), goût pour le travail en équipe.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-tag">Extra & Week-end</div>
+        <h3>Renfort service</h3>
+        <p>
+          Poste idéal pour étudiants ou compléments d’activité,
+          principalement le soir et le week-end.
+        </p>
+      </article>
+    </section>
+
+    <section class="form-section" style="margin-top:2rem;">
+      <h2>Candidature spontanée</h2>
+      <form action="#" method="post" enctype="multipart/form-data">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom" required />
+          </div>
+
+          <div class="form-group">
+            <label for="prenom">Prénom *</label>
+            <input type="text" id="prenom" name="prenom" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="telephone">Téléphone *</label>
+            <input type="tel" id="telephone" name="telephone" required />
+          </div>
+
+          <div class="form-group">
+            <label for="poste">Poste souhaité *</label>
+            <select id="poste" name="poste" required>
+              <option value="">Sélectionner…</option>
+              <option value="serveur">Serveur / Serveuse</option>
+              <option value="cuisinier">Cuisinier / Cuisinière</option>
+              <option value="plonge">Plongeur / Plongeuse</option>
+              <option value="manager">Manager de salle</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="disponibilite">Disponibilité</label>
+            <input type="text" id="disponibilite" name="disponibilite"
+                   placeholder="Ex : dès maintenant, week-end, soirées…" />
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top:1rem;">
+          <label for="message">Message / Présentation *</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <div class="form-group" style="margin-top:1rem;">
+          <label for="cv">CV (PDF, max 5 Mo)</label>
+          <input type="file" id="cv" name="cv" accept=".pdf" />
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <button type="submit" class="btn btn-primary">Envoyer ma candidature</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; <span id="year"></span> Sucré Salé – Évry · Tous droits réservés
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
