@@ -19,6 +19,7 @@
   color: var(--text-main);
 }
 
+/* Layout global */
 body {
   margin: 0;
   padding: 0;
@@ -28,14 +29,13 @@ body {
   align-items: flex-start;
 }
 
-/* Fond léger en “verre” pour l’app */
 .app {
   max-width: 900px;
   width: 100%;
   padding: 32px 16px 48px;
 }
 
-/* Titre glow / gradient */
+/* TITRE */
 h1 {
   text-align: center;
   margin-bottom: 8px;
@@ -53,7 +53,39 @@ h1 {
   margin-bottom: 24px;
 }
 
-/* Barre d’actions */
+/* 🔤 ZONE POUR CHANGER LE NOM DU PROJET */
+.project-name-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 24px;
+}
+
+.project-name-row input[type="text"] {
+  min-width: 240px;
+  max-width: 340px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background: rgba(15, 23, 42, 0.85);
+  padding: 9px 15px;
+  font-size: 0.9rem;
+  outline: none;
+  color: #e5e7eb;
+  text-align: center;
+  transition: 0.25s ease;
+}
+
+.project-name-row input[type="text"]::placeholder {
+  color: rgba(148, 163, 184, 0.9);
+}
+
+.project-name-row input[type="text"]:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.35);
+}
+
+/* Toolbar boutons */
 .toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -70,8 +102,7 @@ button {
   cursor: pointer;
   background: linear-gradient(135deg, #f97316, #ea580c);
   color: white;
-  transition: transform 0.08s ease, box-shadow 0.08s ease, opacity 0.15s ease,
-              filter 0.15s ease;
+  transition: 0.15s ease;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
@@ -94,11 +125,10 @@ button:hover {
 }
 
 button:active {
-  transform: translateY(0) scale(0.99);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(0) scale(0.97);
 }
 
-/* Carte principale type dashboard */
+/* Carte principale */
 .card {
   background: var(--card-bg);
   border-radius: 18px;
@@ -108,7 +138,7 @@ button:active {
   backdrop-filter: blur(18px);
 }
 
-/* Sections avec bord coloré */
+/* Sections */
 .section {
   margin-bottom: 18px;
   padding: 12px 12px 12px 14px;
@@ -124,17 +154,9 @@ button:active {
   position: absolute;
   inset: 0;
   border-left: 3px solid rgba(249, 115, 22, 0.6);
-  border-radius: inherit;
   pointer-events: none;
 }
 
-.section:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-/* Titre de section */
 .section-title {
   font-weight: 600;
   margin-bottom: 6px;
@@ -143,7 +165,6 @@ button:active {
   gap: 8px;
 }
 
-/* Sous-titres */
 .section-subtitle {
   font-size: 0.8rem;
   color: var(--text-muted);
@@ -151,7 +172,7 @@ button:active {
   margin-bottom: 4px;
 }
 
-/* Liste des tâches */
+/* Liste & tâches */
 .tasks {
   margin-left: 28px;
   margin-top: 4px;
@@ -173,16 +194,11 @@ button:active {
   accent-color: #f97316;
 }
 
-.task label {
-  cursor: pointer;
-}
-
-/* Cross / suppression aligné à droite */
 .task button.delete-task {
   margin-left: auto;
 }
 
-/* Pastilles numérotées (couleurs différentes) */
+/* Pastilles colorées */
 .badge {
   padding: 2px 8px;
   border-radius: 999px;
@@ -191,7 +207,7 @@ button:active {
   background: #e5e7eb;
 }
 
-/* Couleurs spécifiques par section (1 à 8) */
+/* Couleurs par section */
 .section:nth-of-type(1) .badge { background: var(--badge-1); }
 .section:nth-of-type(2) .badge { background: var(--badge-2); }
 .section:nth-of-type(3) .badge { background: var(--badge-3); }
@@ -201,6 +217,7 @@ button:active {
 .section:nth-of-type(7) .badge { background: var(--badge-7); }
 .section:nth-of-type(8) .badge { background: var(--badge-8); }
 
+/* Texte bas de page */
 .info {
   font-size: 0.8rem;
   color: var(--text-muted);
@@ -208,7 +225,7 @@ button:active {
   text-align: center;
 }
 
-/* Champ pour tâches personnalisées */
+/* Zone des tâches perso */
 .custom-input-row {
   display: flex;
   flex-wrap: wrap;
@@ -228,33 +245,28 @@ button:active {
   color: #e5e7eb;
 }
 
-.custom-input-row input[type="text"]::placeholder {
-  color: rgba(148, 163, 184, 0.9);
-}
-
 .custom-input-row input[type="text"]:focus {
   border-color: #f97316;
   box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.6);
 }
 
-/* Zone de preview PDF (fenêtre séparée) = pas visible ici */
-#pdf-preview {
-  display: none;
-}
-
-/* Version impression : garder un style simple */
+/* Impression */
 @media print {
   .toolbar,
-  .info {
+  .info,
+  .project-name-row {
     display: none !important;
   }
+
   body {
     background: white;
   }
+
   .app {
     max-width: 100%;
     padding: 0;
   }
+
   .card {
     box-shadow: none;
     border: none;
